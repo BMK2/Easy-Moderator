@@ -13,6 +13,7 @@ public class ConfigManager {
     private Properties prop;
     private String guildId;
     private String commandPrefix;
+    private String botToken;
 
     public ConfigManager() {
         this.prop = new Properties();
@@ -29,6 +30,7 @@ public class ConfigManager {
             prop.load(input);
             this.guildId = getProperty("guildID");
             this.commandPrefix = getProperty("commandPrefix");
+            this.botToken = getProperty("botID");
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally{
@@ -55,6 +57,6 @@ public class ConfigManager {
     }
 
     public String getBotToken() {
-        return "NTgwNTAxNjI4MTM4ODE1NDk4.XORoSA.G4sMzzS5omIyV9Z6h2xjNLzy8Ms";
+        return this.botToken;
     }
 }
